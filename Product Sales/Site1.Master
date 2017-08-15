@@ -1,0 +1,229 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Product_Sales.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!--Custom-Theme-files-->
+    <!--theme-style-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--start-menu-->
+    <%--    <script src="js/simpleCart.min.js"> </script>--%>
+    <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/memenu.js"></script>
+    <script>$(document).ready(function () { $(".memenu").memenu(); });</script>
+    <!--dropdown-->
+    <script src="js/jquery.easydropdown.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var menu_ul = $('.menu_drop > li > ul'),
+                   menu_a = $('.menu_drop > li > a');
+
+            menu_ul.hide();
+
+            menu_a.click(function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    menu_a.removeClass('active');
+                    menu_ul.filter(':visible').slideUp('normal');
+                    $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                } else {
+                    $(this).removeClass('active');
+                    $(this).next().stop(true, true).slideUp('normal');
+                }
+            });
+
+        });
+    </script>
+<style type="text/css">
+        .rank {
+            border: 1px solid #fff;
+            height: 100px;
+            padding: 6px 0 9px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+            .rank:hover {
+                border: 1px solid #73B6E1;
+                transition: 0.5s all ease;
+                -webkit-transition: 0.5s all ease;
+                -moz-transition: 0.5s all ease;
+                -o-transition: 0.5s all ease;
+                -ms-transition: 0.5s all ease;
+            }
+
+            .rank #picture {
+                width: 60px;
+                height: 80px;
+                float: left;
+                margin-top: 3px;
+                margin-left: 15px;
+                border: 1px solid #ececec;
+            }
+            .rank .content {
+                height: 70px;
+                margin-left: 110px;
+                overflow: hidden;
+            }
+
+            .rank #name {
+                font-family: 'BreeSerif-Regular';
+                height: 25px;
+                font-size: large;
+                margin: auto;
+                overflow: hidden;
+            }
+            .rank #brand {
+                height: 30px;
+                margin: auto;
+                overflow: hidden;
+                font-size: small;
+                font-family: 'Lato-Regular';
+            }
+            .rank #price {
+                height: 18px;
+                line-height: 18px;
+                padding-top: 8px;
+                overflow: hidden;
+            }
+    </style>
+</head>
+<body>
+    <!--top-header-->
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-main">
+                <div class="col-md-6 top-header-left">
+                    <div class="drop">
+                        <div class="box" style="display:table-cell">
+                            <asp:Label ID="Label1" runat="server" Text="Welcome" ForeColor="White" Width="200px"></asp:Label>
+                            
+                        </div>
+                        <div class="box" style="display:table-cell">
+                            <a id="logout" runat="server" href="index.aspx?logout=true">Logout</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 top-header-left">
+                    <div class="cart box_1">
+                        <a href="checkout.aspx">
+                            <div class="total">
+                            </div>
+                            <img src="images/cart-1.png" alt="" />
+                        </a>
+                        <p><a href="checkout.aspx" class="simpleCart_empty">Shopping Cart</a></p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--top-header-->
+    <!--start-logo-->
+    <div class="logo">
+        <a href="index.aspx">
+            <h1>Luxury Watches</h1>
+        </a>
+    </div>
+    <asp:ContentPlaceHolder ID="MasterPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--end-single-->
+    <!--information-starts-->
+    <div class="information">
+        <div class="container">
+            <div class="infor-top">
+                <div class="col-md-3 infor-left">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="http://www.facebook.com"><span class="fb"></span>
+                            <h6>Facebook</h6>
+                        </a></li>
+                        <li><a href="http://www.twitter.com"><span class="twit"></span>
+                            <h6>Twitter</h6>
+                        </a></li>
+                        <li><a href="http://plus.google.com"><span class="google"></span>
+                            <h6>Google+</h6>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 infor-left">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="index.aspx">
+                            <p>Home</p>
+                        </a></li>
+                        <li><a href="products.aspx">
+                            <p>Products</p>
+                        </a></li>
+                        <li><a href="checkout.aspx">
+                            <p>Shopping Cart</p>
+                        </a></li>
+                        <li><a href="contact.aspx">
+                            <p>Contact Us</p>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 infor-left">
+                    <h3>My Account</h3>
+                    <ul>
+                        <li><a id="FooterRegister" runat="server" href="register.aspx">
+                            <p>Register</p>
+                        </a></li>
+                        <li><a id="FooterLogin" runat="server" href="account.aspx">
+                            <p>Login</p>
+                        </a></li>
+                        <li><a id="FooterAdmin" runat="server" href="adminPage.aspx">
+                            <p>Admin</p>
+                        </a></li>
+                        <li><a id="FooterLogout" runat="server" href="index.aspx?logout=true">
+                            <p>Logout</p>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 infor-left">
+                    <h3>Store Information</h3>
+                    <h4>Luuuxrious Watches,
+                        <span>Group 3,</span>
+                        <span>Karthik Jain, Yue Ma,</span>
+                        Qi Chen, Qingwen Zhu.</h4>
+                    <h5>+805 123 4567</h5>
+                    <p><a href="mailto:unknown@email.com">unknown@example.com</a></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--information-end-->
+    <!--footer-starts-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-md-6 footer-left">
+                    <form>
+                        <input type="text" value="Enter Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email';}">
+                        <input type="submit" value="Subscribe">
+                    </form>
+                </div>
+                <div class="col-md-6 footer-right">
+                    <p>Copyright &copy; 2017.Company name All rights reserved.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--footer-end-->
+</body>
+</html>

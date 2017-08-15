@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site3.master.cs" Inherits="Product_Sales.Site3" MasterPageFile="~/Site2.master" %>
+
+<asp:content id="NavContent" runat="server" contentplaceholderid="MenuPlaceHolder">
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.aspx">Home</a></li>
+                <asp:contentplaceholder id="ContentPlaceHolder2" runat="server">
+                </asp:contentplaceholder>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+
+<asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+</asp:contentplaceholder>
+
+</asp:content>

@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="Product_Sales.Site2" MasterPageFile="~/Site1.master" %>
+
+<asp:Content ID="MenuContent" runat="server" ContentPlaceHolderID="MasterPlaceHolder">
+    <!--bottom-header-->
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header">
+                <div class="col-md-9 header-left">
+                    <div class="top-nav">
+                        <ul class="memenu skyblue">
+                            <li class="<%=url=="/index.aspx"?"active":"grid" %>"><a href="index.aspx">Home</a></li>
+                            <li class="<%=category=="Men"? "active":"grid" %>"><a href="products.aspx?category=Men">Men</a>
+                            </li>
+                            <li class="<%=category=="Women"? "active":"grid" %>"><a href="products.aspx?category=Women">Women</a>
+                            </li>
+                            <li class="<%=category=="Kids"? "active":"grid" %>"><a href="products.aspx?category=Kids">Kids</a>
+                            </li>
+                            <li class="<%=(url=="/products.aspx" && String.IsNullOrEmpty(category))?"active":"grid" %>"><a href="products.aspx">All Products</a>
+                                <div class="mepanel">
+                                    <div class="row">
+                                        <div class="col1 me-one">
+                                            <h4>Type</h4>
+                                            <ul>
+                                                <li><a href="products.aspx?type=Automatic">Automatic</a></li>
+                                                <li><a href="products.aspx?type=Machanical">Machanical</a></li>
+                                                <li><a href="products.aspx?type=Electric">Electric</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col1 me-one">
+                                            <h4>Popular Brands</h4>
+                                            <ul>
+                                                <li><a href="products.aspx?brand=Fossil">Fossil</a></li>
+                                                <li><a href="products.aspx?brand=Tissot">Tissot</a></li>
+                                                <li><a href="products.aspx?brand=Omega">Omega</a></li>
+                                                <li><a href="products.aspx?brand=Bulova">Bulova</a></li>
+                                                <li><a href="products.aspx?brand=Guess">Guess</a></li>
+                                                <li><a href="products.aspx?brand=Disney">Disney</a></li>
+                                                <li><a href="products.aspx?brand=TomTom">TomTom</a></li>
+                                                <li><a href="products.aspx?brand=Titan">Titan</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col1 me-one">
+                                            <h4>Price</h4>
+                                            <ul>
+                                                <li><a href="products.aspx?price=lvl1">$0 - 200</a></li>
+                                                <li><a href="products.aspx?price=lvl2">$200 - 1,000</a></li>
+                                                <li><a href="products.aspx?price=lvl3">$1,000 - 2,000</a></li>
+                                                <li><a href="products.aspx?price=lvl4">Above $2,000</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="<%=url=="/contact.aspx"?"active":"grid" %>"><a href="contact.aspx">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 header-right">
+                    <form class="search-bar" action="products.aspx" method="get">
+                        <input type="text" value="Search" name="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--bottom-header-->
+
+    <asp:ContentPlaceHolder ID="MenuPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+
+</asp:Content>

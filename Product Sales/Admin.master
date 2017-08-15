@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Product_Sales.Admin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MasterPlaceHolder" runat="server">
+    <!--bottom-header-->
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header">
+                <div class="col-md-9 header-left">
+                    <div class="top-nav">
+                        <ul class="memenu skyblue">
+                            <li class="active"><a href="index.aspx">Home</a></li>
+                            <li class="grid"><a href="#">Users</a>
+                                <div class="mepanel">
+                                    <div class="col1 me-one">
+                                        <ul>
+                                            <li><a href="addUser.aspx">Add New User</a></li>
+                                            <li><a href="editUser.aspx">Modify Users</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="grid"><a href="#">Products</a>
+                                <div class="mepanel">
+                                    <div class="row">
+                                        <div class="col1 me-one">
+                                            <ul>
+                                                <li><a href="addProduct.aspx">Add New Product</a></li>
+                                                <li><a href="editProduct.aspx">Modify Products</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- <li class="active"><a href="adminPage.aspx">Admin</a></li>
+                            <li class="active"><a href="logout.aspx">Logout</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--bottom-header-->
+    <asp:ContentPlaceHolder ID="AdminPagesPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
